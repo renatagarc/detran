@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="./style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <title>Desconto de até 60%</title>
+    <script type="text/javascript">
+        alert("Atenção, site em manutenção, você será levado até o atendimento prioritário através do WhatsApp");
+      </script>
+    
+      <script>
+        // function mtel(v) {
+        //   v = v.replace(/\D/g, "");             //Remove tudo o que nÃ£o Ã© dÃ­gito
+        //   v = v.replace(/^(\d{2})(\d)/g, "($1) $2"); //Coloca parÃªnteses em volta dos dois primeiros dÃ­gitos
+        //   v = v.replace(/(\d)(\d{4})$/, "$1-$2");    //Coloca hÃ­fen entre o quarto e o quinto dÃ­gitos
+        //   return v;
+        // }
+    
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        const text = `Boas-vindas! O que eu posso fazer por você hoje?`
+        // const tel = mtel(params.numbers);
+    
+        // const data = {
+        //   telefone: tel,
+        //   mensagem: `Boas-vindas! O que eu posso fazer por você hoje?`
+        // }
+    
+        window.location.href = `https://api.whatsapp.com/send?phone=55${params.numbers}&text=${encodeURIComponent(text)}`;
+      </script>
 </head>
 
 <body>
